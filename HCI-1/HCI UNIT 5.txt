@@ -1,0 +1,18 @@
+Cognitive Walkthrough:
+Cognitive Walkthrough is one of the important techniques with reference to HCI. Justify the statement with a suitable example of your own. [8]
+Draw and explain User Interface Management System architecture. [9]
+OR:
+How will you apply the DECIDE framework to any online booking system? Explain it with necessary diagram and suitable explanation. [10]
+What do you mean by evaluation? What are the goals of evaluation? Explain any one category of evaluation in detail.
+Explain DECIDE framework with necessary diagram and an example of the same. [8]
+What are the goals of evaluation? Explain Cognitive Walkthrough and Heuristics Evaluation technique in detail. [9]
+OR:
+Explain User Interface Management System (UIMS) in detail along with its architecture? [8]
+Write a short note on:
+Toolkits
+Usability testing
+What are the goals of evaluation? Explain Cognitive Walkthrough and Heuristics Evaluation technique in detail. [8]
+What is Usability Testing? How will you perform Usability Testing on an interactive interface? [9]
+OR:
+Explain User Interface Management System (UIMS) in detail along with its architecture? [8]
+Explain DECIDE framework with necessary diagram and an example of the same.
