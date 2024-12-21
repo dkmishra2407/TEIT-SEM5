@@ -2,7 +2,7 @@ Branch and Bound (B&B) is a general algorithmic method used for solving optimiza
 
 The method works by:
 
-Branching: Dividing the problem into smaller subproblems, often represented as a tree structure. Each node in the tree corresponds to a subproblem.
+1.Branching: Dividing the problem into smaller subproblems, often represented as a tree structure. Each node in the tree corresponds to a subproblem.
 2.Bounding: Calculating bounds (upper or lower) for the objective function in each subproblem to estimate the best possible solution that could be found in that subproblem.
 3.Pruning: If the bound of a subproblem indicates it cannot lead to a better solution than one already found, it is discarded (pruned).
 4.Optimal Solution: The algorithm continues branching and bounding until the entire space has been explored or pruned, and the optimal solution is identified.
@@ -11,23 +11,33 @@ Branch and Bound is particularly useful in problems like Integer Programming, Tr
 
 TYPES :- 
 
-Branch and Bound with Depth-First Search (DFS):
+1. FIFO Branch and Bound (First-In, First-Out)
 
-In this approach, the algorithm explores the solution space by following a depth-first search pattern. It goes deep into a subproblem before backtracking.
-Pros: Can be memory-efficient, as it doesn't need to store all branches at once.
-Cons: May not always lead to the optimal solution quickly due to the way it explores the tree.
+Strategy: Uses a queue to store nodes. Nodes are expanded in the same order in which they are generated (first-come, first-served).
+Node Exploration: It follows a Breadth-First Search (BFS) strategy.
+Use Case: Useful for problems where all nodes at the same level need to be explored before moving deeper.
 
-Branch and Bound with Best-First Search:
+Example:
+In the Travelling Salesman Problem (TSP), this type ensures that all partial paths of a particular length are explored before paths of greater length.
 
-In this version, the algorithm chooses the next subproblem to explore based on the best bound (e.g., the one with the lowest cost in a minimization problem).
-Pros: Tends to find the optimal solution more quickly by focusing on the most promising branches first.
-Cons: It can be memory-intensive, as it may need to store all branches that could potentially lead to the best solution.
+2. LIFO Branch and Bound (Last-In, First-Out)
 
-Branch and Bound with Breadth-First Search (BFS):
+Strategy: Uses a stack to store nodes. The most recently generated node is expanded first.
+Node Exploration: It follows a Depth-First Search (DFS) strategy.
+Use Case: DFS-like behavior is memory-efficient and better for problems where solutions lie deeper in the search tree.
 
-This approach explores all nodes at the present depth level before moving to nodes at the next level, ensuring that all options are considered in an orderly manner.
-Pros: More systematic and can prevent the algorithm from getting stuck in less promising subproblems.
-Cons: It can be slow and requires more memory.
+Example:
+In a knapsack problem, this strategy quickly dives into deeper combinations of items to test feasibility and solutions.
+
+3. Least Cost Branch and Bound
+
+Strategy: The node with the lowest cost bound is selected for exploration first.
+Node Exploration: It is a Best-First Search strategy that prioritizes nodes with minimal costs.
+Use Case: Best suited for optimization problems where minimizing/maximizing costs is the goal.
+
+Example:
+In the TSP, the node with the lowest lower bound is explored first to ensure an optimal solution quickly.
+
 
 // //
 
@@ -50,10 +60,9 @@ There are two types of bounding functions:
 
 Upper Bound: Used in minimization problems, the upper bound estimates the best possible objective value achievable from a subproblem. If the bound exceeds the current best solution, the subproblem can be pruned.
 
-Lower Bound: Used in maximization problems, the lower bound estimates the worst possible objective value for the subproblem. If this bound is worse than the current best solution, the subproblem can be discarded.
+Lower Bound: Used in maximization problems, the lower bound estimates the worst possible objective value for the subproblem. If this bound is worse than the current best solution, the subproblem can be discarded
 
 EXAMPLES:- 
-
 In the Traveling Salesman Problem (TSP), the minimum spanning tree of the remaining cities could be used as a lower bound.
 
 // DIFFERENCES BETWEEN BRANCH AND BOUND AND BACKTRACKING
