@@ -26,8 +26,8 @@ backup.addEventListener('click',handler2);
 // }
 
 // post 
-function handler1(){
 
+function handler1(){
     console.log("You have clicked the fetchbtn");
     const xhr = new XMLHttpRequest();
 
