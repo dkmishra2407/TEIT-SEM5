@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Register</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username">
+              <div class="text-danger" *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.touched">
+                Username is required
+              </div>
+              <div class="text-danger" *ngIf="registerForm.get('username')?.errors?.['minlength']">
+                Username must be at least 3 characters
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email">
+              <div class="text-danger" *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched">
+                Email is required
+              </div>
+              <div class="text-danger" *ngIf="registerForm.get('email')?.errors?.['email']">
+                Please enter a valid email
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password">
+              <div class="text-danger" *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched">
+                Password is required
+              </div>
+              <div class="text-danger" *ngIf="registerForm.get('password')?.errors?.['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" formControlName="phone">
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea class="form-control" id="address" formControlName="address"></textarea>
+            </div>
+
+            <div class="text-danger mb-3" *ngIf="error">
+              {{ error }}
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

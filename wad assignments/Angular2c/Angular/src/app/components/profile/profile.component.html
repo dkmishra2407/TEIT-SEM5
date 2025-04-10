@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h3 class="mb-0">Profile</h3>
+          <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+        <div class="card-body">
+          <div *ngIf="user" class="row">
+            <div class="col-md-6">
+              <h4>Personal Information</h4>
+              <table class="table">
+                <tr>
+                  <th>Username:</th>
+                  <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                  <th>Email:</th>
+                  <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                  <th>First Name:</th>
+                  <td>{{ user.firstName || 'Not provided' }}</td>
+                </tr>
+                <tr>
+                  <th>Last Name:</th>
+                  <td>{{ user.lastName || 'Not provided' }}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-md-6">
+              <h4>Contact Information</h4>
+              <table class="table">
+                <tr>
+                  <th>Phone:</th>
+                  <td>{{ user.phone || 'Not provided' }}</td>
+                </tr>
+                <tr>
+                  <th>Address:</th>
+                  <td>{{ user.address || 'Not provided' }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div *ngIf="!user" class="text-center">
+            <p>Loading profile information...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
